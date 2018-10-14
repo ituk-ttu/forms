@@ -1,0 +1,8 @@
+# Server dirs
+idea
+target
+*.iml
+
+# Client stuff
+client/node_modules
+client/public
