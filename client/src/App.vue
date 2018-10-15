@@ -2,18 +2,21 @@
       <div id="app">
             <img alt="Vue logo" src="./assets/logo.png">
             <first-form></first-form>
+            <admin-view></admin-view>
       </div>
 </template>
 
 <script>
-import FirstForm from './components/FirstForm'
+      import FirstForm from './components/FirstForm'
+      import AdminView from './components/Admin'
 
-export default {
-    name: 'app',
-    components: {
-        FirstForm
-    }
-}
+      export default {
+          name: 'app',
+          components: {
+              FirstForm,
+              AdminView
+          }
+      }
 </script>
 
 <style>

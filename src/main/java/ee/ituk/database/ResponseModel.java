@@ -13,19 +13,29 @@ public class ResponseModel implements Serializable {
     @Id @Getter private long id;
     @Getter @Setter private String name;
     @Getter @Setter private String email;
-    @Getter @Setter private Boolean checked_d1;
-    @Getter @Setter private Boolean checked_d2;
-    @Getter @Setter private String package_day1;
-    @Getter @Setter private String package_day2;
+    @Getter @Setter private Boolean checkedDay1;
+    @Getter @Setter private Boolean checkedDay2;
+    @Getter @Setter private String packageDay1;
+    @Getter @Setter private String packageDay2;
 
     protected ResponseModel() {}
 
     public ResponseModel(String name, String email, Boolean checked_d1, Boolean checked_d2, String package_day1, String package_day2) {
         this.name = name;
         this.email = email;
-        this.checked_d1 = checked_d1;
-        this.checked_d2 = checked_d2;
-        this.package_day1 = package_day1;
-        this.package_day2 = package_day2;
+        this.checkedDay1 = checked_d1;
+        this.checkedDay2 = checked_d2;
+
+        if (this.checkedDay1) {
+            this.packageDay1 = package_day1;
+        } else {
+            this.packageDay1 = "";
+        }
+
+        if (this.checkedDay2) {
+            this.packageDay2 = package_day2;
+        } else {
+            this.packageDay2 = "";
+        }
     }
 }
