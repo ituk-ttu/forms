@@ -3,6 +3,7 @@ idea
 target
 *.iml
 .idea
+**/rebel.xml
 
 # Client stuff
 client/node_modules
