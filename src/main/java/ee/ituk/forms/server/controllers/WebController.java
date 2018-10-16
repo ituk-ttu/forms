@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import ee.ituk.forms.server.database.ResponseModel;
-import ee.ituk.forms.server.database.ResponseRepo;
+import ee.ituk.forms.server.database.ResponseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +16,7 @@ public class WebController {
     private ObjectMapper mapper;
 
     @Autowired
-    ResponseRepo responseRepo;
+    ResponseRepository responseRepository;
 
     public WebController(){
         count = false;
@@ -39,7 +39,7 @@ public class WebController {
                 responseModel.setPackageDay2("none");
             }
 
-            responseRepo.save(responseModel);
+            responseRepository.save(responseModel);
 
             root.put("status", "OK");
             root.put("info", "Response saved");
@@ -60,10 +60,10 @@ public class WebController {
         try {
 
             for (Integer p = 1; p < 4; p++) {
-                data.put("d1p" + p, responseRepo.findByPackageDay1(p.toString()).size());
+                data.put("d1p" + p, responseRepository.findByPackageDay1(p.toString()).size());
             }
             for (Integer p = 1; p < 4; p++) {
-                data.put("d2p" + p, responseRepo.findByPackageDay2(p.toString()).size());
+                data.put("d2p" + p, responseRepository.findByPackageDay2(p.toString()).size());
             }
 
             root.put("status", "OK");
