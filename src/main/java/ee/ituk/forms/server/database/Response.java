@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "responses")
 @Data
-public class ResponseModel implements Serializable {
+public class Response implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
@@ -21,9 +21,9 @@ public class ResponseModel implements Serializable {
     private String packageDay1;
     private String packageDay2;
 
-    protected ResponseModel() {}
+    protected Response() {}
 
-    public ResponseModel(String name, String email, Boolean checked_d1, Boolean checked_d2, String package_day1, String package_day2) {
+    public Response(String name, String email, Boolean checked_d1, Boolean checked_d2, String package_day1, String package_day2) {
         this.name = name;
         this.email = email;
         this.checkedDay1 = checked_d1;

@@ -3,7 +3,7 @@ package ee.ituk.forms.server.controllers;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import ee.ituk.forms.server.database.ResponseModel;
+import ee.ituk.forms.server.database.Response;
 import ee.ituk.forms.server.database.ResponseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,17 +29,17 @@ public class WebController {
     public String submit(@RequestBody String responseString) {
         ObjectNode root = factory.objectNode();
         try {
-            ResponseModel responseModel = mapper.readValue(responseString, ResponseModel.class);
+            Response response = mapper.readValue(responseString, Response.class);
 
-            if (!responseModel.getCheckedDay1()) {
-                responseModel.setPackageDay1("none");
+            if (!response.getCheckedDay1()) {
+                response.setPackageDay1("none");
             }
 
-            if (!responseModel.getCheckedDay2()) {
-                responseModel.setPackageDay2("none");
+            if (!response.getCheckedDay2()) {
+                response.setPackageDay2("none");
             }
 
-            responseRepository.save(responseModel);
+            responseRepository.save(response);
 
             root.put("status", "OK");
             root.put("info", "Response saved");
