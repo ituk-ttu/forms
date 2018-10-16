@@ -8,6 +8,7 @@ import ee.ituk.forms.server.database.ResponseRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 public class WebController {
     private boolean count;
@@ -23,7 +24,6 @@ public class WebController {
         mapper = new ObjectMapper();
     }
 
-    @CrossOrigin
     @PostMapping("/submit")
     @ResponseBody
     public String submit(@RequestBody String responseString) {
@@ -52,7 +52,6 @@ public class WebController {
         }
     }
 
-    @CrossOrigin
     @GetMapping("/count")
     @ResponseBody
     public String count() {
