@@ -8,21 +8,18 @@ import ee.ituk.forms.server.database.ResponseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
+
 @CrossOrigin
 @RestController
 public class WebController {
-    private boolean count;
+
+    @Resource
     private JsonNodeFactory factory;
+    @Resource
     private ObjectMapper mapper;
-
-    @Autowired
-    ResponseRepository responseRepository;
-
-    public WebController(){
-        count = false;
-        factory = new JsonNodeFactory(false);
-        mapper = new ObjectMapper();
-    }
+    @Resource
+    private ResponseRepository responseRepository;
 
     @PostMapping("/submit")
     @ResponseBody
