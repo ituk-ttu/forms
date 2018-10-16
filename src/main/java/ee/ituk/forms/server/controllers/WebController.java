@@ -1,10 +1,10 @@
-package ee.ituk.controllers;
+package ee.ituk.forms.server.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import ee.ituk.database.ResponseModel;
-import ee.ituk.database.ResponseRepo;
+import ee.ituk.forms.server.database.ResponseModel;
+import ee.ituk.forms.server.database.ResponseRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

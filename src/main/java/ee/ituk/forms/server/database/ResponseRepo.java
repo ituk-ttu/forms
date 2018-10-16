@@ -1,4 +1,4 @@
-package ee.ituk.database;
+package ee.ituk.forms.server.database;
 
 import org.springframework.data.repository.CrudRepository;
 

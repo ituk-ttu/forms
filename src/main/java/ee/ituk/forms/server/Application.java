@@ -1,4 +1,4 @@
-package ee.ituk;
+package ee.ituk.forms.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package ee.ituk;
+package ee.ituk.forms.server;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
