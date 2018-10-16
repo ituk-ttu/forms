@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class ResponseModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private long id;
+    private Long id;
     private String name;
     private String email;
     private Boolean checkedDay1;
