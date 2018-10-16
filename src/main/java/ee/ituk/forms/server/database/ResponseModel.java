@@ -1,5 +1,6 @@
 package ee.ituk.forms.server.database;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,15 +9,17 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "responses")
+@Data
 public class ResponseModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Id @Getter private long id;
-    @Getter @Setter private String name;
-    @Getter @Setter private String email;
-    @Getter @Setter private Boolean checkedDay1;
-    @Getter @Setter private Boolean checkedDay2;
-    @Getter @Setter private String packageDay1;
-    @Getter @Setter private String packageDay2;
+    @Id
+    private long id;
+    private String name;
+    private String email;
+    private Boolean checkedDay1;
+    private Boolean checkedDay2;
+    private String packageDay1;
+    private String packageDay2;
 
     protected ResponseModel() {}
 
